@@ -1,11 +1,12 @@
 import Link from "next/link";
+import LoginComponent from "./LoginComponent";
 
-function Navbar() {
+async function Navbar() {
   let Links = [
     { name: "Home", link: "/" },
     { name: "Admin", link: "/admin" },
     { name: "Panel", link: "/admin/panel" },
-    { name: "Login", link: "/login" },
+    { name: "About", link: "/about" },
   ];
   return (
     <div className="md:px24 flex h-12 w-full items-center justify-between bg-teal-700 px-6  text-white lg:px-72">
@@ -25,6 +26,7 @@ function Navbar() {
             </Link>
           </li>
         ))}
+        <LoginComponent />
       </ul>
     </div>
   );
