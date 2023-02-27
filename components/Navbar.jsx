@@ -1,7 +1,12 @@
 import Link from "next/link";
 import LoginComponent from "./LoginComponent";
+import LogoutComponent from "./LogoutComponent";
+import { getServerSession } from "next-auth/next";
+import { authOptions } from "@/pages/api/auth/[...nextauth]";
 
 async function Navbar() {
+  const session = await getServerSession(authOptions);
+
   let Links = [
     { name: "Home", link: "/" },
     { name: "Admin", link: "/admin" },
@@ -26,7 +31,9 @@ async function Navbar() {
             </Link>
           </li>
         ))}
-        <LoginComponent />
+        <ul className="flex items-center gap-6"></ul>
+        {!session?.user && <LoginComponent />}
+        {session?.user && <LogoutComponent image={session.user.image || ""} />}
       </ul>
     </div>
   );
