@@ -1,7 +1,9 @@
+import { NextResponse } from "next/server";
+
 export async function GET(request) {
-  return new Response("Hello, Next.js!");
+  return NextResponse.json({ message: "Hello, Next.js!" });
 }
 
-export async function POST(request) {
-  return Response.json({ message: "Hello from POST route" });
-}
+// export async function POST(request) {
+//   return NextResponse.json({ message: "Hello from POST route" });
+// }

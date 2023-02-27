@@ -10,8 +10,8 @@ async function Navbar() {
   let Links = [
     { name: "Home", link: "/" },
     { name: "Admin", link: "/admin" },
-    { name: "Dasgboard", link: "/dashboard" },
-    { name: "About", link: "/about" },
+    { name: "Dashboard", link: "/dashboard" },
+    { name: "Posts", link: "/posts" },
   ];
   return (
     <div className="md:px24 flex h-12 w-full items-center justify-between bg-teal-700 px-6  text-white lg:px-72">
