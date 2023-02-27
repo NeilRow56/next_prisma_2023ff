@@ -2,6 +2,7 @@ import "./globals.css";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import Provider from "@/components/Provider";
+import QueryWrapper from "@/components/QueryWrapper";
 
 export const metadata = {
   title: "Create Next_Prisma App",
@@ -12,11 +13,13 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <Provider>
-          <Navbar />
-          <main>{children}</main>
-          <Footer />
-        </Provider>
+        <QueryWrapper>
+          <Provider>
+            <Navbar />
+            <main>{children}</main>
+            <Footer />
+          </Provider>
+        </QueryWrapper>
       </body>
     </html>
   );
