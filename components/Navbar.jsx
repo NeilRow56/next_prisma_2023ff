@@ -10,7 +10,7 @@ async function Navbar() {
   let Links = [
     { name: "Home", link: "/" },
     { name: "Admin", link: "/admin" },
-    { name: "Panel", link: "/admin/panel" },
+    { name: "Dasgboard", link: "/dashboard" },
     { name: "About", link: "/about" },
   ];
   return (
@@ -33,7 +33,7 @@ async function Navbar() {
         ))}
         <ul className="flex items-center gap-6"></ul>
         {!session?.user && <LoginComponent />}
-        {session?.user && <LogoutComponent image={session.user.image || ""} />}
+        {session?.user && <LogoutComponent image={session.user?.image || ""} />}
       </ul>
     </div>
   );
