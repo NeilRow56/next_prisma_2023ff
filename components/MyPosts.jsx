@@ -15,10 +15,19 @@ export default function MyPosts() {
     queryKey: ["auth-posts"],
   });
   if (isLoading) return <h1>Posts are loading...</h1>;
-  if (data) console.log(data);
+
   return (
     <div>
-      <EditPost />
+      {data?.posts?.map((post) => (
+        <EditPost
+          id={post.id}
+          key={post.id}
+          avatar={data.image}
+          name={data.name}
+          title={post.title}
+          comments={post.comments}
+        />
+      ))}
     </div>
   );
 }
