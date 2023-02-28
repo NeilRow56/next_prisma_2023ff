@@ -19,7 +19,7 @@ export default function Home() {
   if (isLoading) return "Loading.....";
 
   return (
-    <section className="container mx-auto  text-center">
+    <section className="container mx-auto px-24  text-center">
       <h1 className="pt-24 text-5xl font-bold text-teal-700">
         Blog Page - everyone can see this page
       </h1>
