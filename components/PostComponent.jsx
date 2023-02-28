@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
-export default function Post({ id, name, avatar, postTitle }) {
+export default function Post({ id, name, avatar, postTitle, comments }) {
   return (
     <motion.div
       animate={{ opacity: 1, scale: 1 }}
@@ -29,7 +29,11 @@ export default function Post({ id, name, avatar, postTitle }) {
           href={{
             pathname: `/post/${id}`,
           }}
-        ></Link>
+        >
+          <p className=" text-sm font-bold text-gray-700">
+            {comments?.length} Comments
+          </p>
+        </Link>
       </div>
     </motion.div>
   );
