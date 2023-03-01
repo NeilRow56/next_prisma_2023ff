@@ -24,6 +24,7 @@ export default function CreatePost() {
         setIsDisabled(false);
       },
       onSuccess: (data) => {
+        // The line below invalidates the cache so that the new posts appear straight away when we press submit.
         queryClient.invalidateQueries(["posts"]);
         toast.success("Post has been made 🔥", { id: toastPostID });
         setTitle("");

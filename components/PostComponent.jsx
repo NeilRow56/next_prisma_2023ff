@@ -30,7 +30,7 @@ export default function Post({ id, name, avatar, postTitle, comments }) {
             pathname: `/post/${id}`,
           }}
         >
-          <p className=" text-sm font-bold text-gray-700">
+          <p className=" cursor-pointer text-sm font-bold text-gray-700">
             {comments?.length} Comments
           </p>
         </Link>
