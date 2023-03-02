@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import Provider from "@/components/Provider";
 import QueryWrapper from "@/components/QueryWrapper";
+import { SearchInput } from "@/components/SearchInput";
 
 import { Nunito_Sans } from "next/font/google";
 
@@ -29,6 +30,7 @@ export default function RootLayout({ children }) {
         <QueryWrapper>
           <Provider>
             <Navbar />
+            <SearchInput />
             <main>{children}</main>
             <Footer />
           </Provider>
